@@ -1,13 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Banpagi\Trading212\Entity;
 
 use DateTime;
+use Symfony\Component\Uid\Uuid;
 
 abstract class AbstractDataRecord
 {
 	private int $rowNumber = 0;
-	private string $uuid = '';
+	private ?Uuid $uuid = null;
 	private string $filename = '';
 	private string $action = '';
 	private ?DateTime $transactionDate = null;
@@ -417,9 +420,9 @@ abstract class AbstractDataRecord
 	/**
 	 * Get the value of uuid
 	 *
-	 * @return  string
+	 * @return  Uuid|null
 	 */
-	public function getUuid(): string
+	public function getUuid(): ?Uuid
 	{
 		return $this->uuid;
 	}
@@ -427,11 +430,11 @@ abstract class AbstractDataRecord
 	/**
 	 * Set the value of uuid
 	 *
-	 * @param   string  $uuid
+	 * @param   Uuid  $uuid
 	 *
 	 * @return  self
 	 */
-	public function setUuid(string $uuid): self
+	public function setUuid(Uuid $uuid): self
 	{
 		$this->uuid = $uuid;
 

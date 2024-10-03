@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Banpagi\Trading212;
 
 class CsvReader
@@ -59,7 +61,7 @@ class CsvReader
                 $data = explode($this->delimiter, $buffer);
                 if ($line == 0 && $this->hasHeader) {
                     if ($this->headerLowerCase) {
-                        $data = array_map(function($item) {
+                        $data = array_map(function ($item) {
                             return strtolower($item);
                         }, $data);
                     }

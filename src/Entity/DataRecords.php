@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Banpagi\Trading212\Entity;
 
@@ -28,7 +30,7 @@ class DataRecords
     /**
      * Get the value of dividend
      *
-     * @return  ArrayCollection
+     * @return  ArrayCollection|Dividend[]
      */
     public function getDividend(): ArrayCollection
     {
@@ -55,7 +57,7 @@ class DataRecords
     /**
      * Get the value of lending
      *
-     * @return  ArrayCollection
+     * @return  ArrayCollection:Lending[]
      */
     public function getLending(): ArrayCollection
     {
@@ -65,7 +67,7 @@ class DataRecords
     /**
      * Set the value of lending
      *
-     * @param   Lending  $lending
+     * @param  Lending  $lending
      *
      * @return  self
      */
@@ -80,7 +82,7 @@ class DataRecords
     /**
      * Get the value of transaction
      *
-     * @return  ArrayCollection
+     * @return  ArrayCollection|Transaction[]
      */
     public function getTransaction(): ArrayCollection
     {
@@ -105,7 +107,7 @@ class DataRecords
     /**
      * Get the value of interest
      *
-     * @return  ArrayCollection
+     * @return  ArrayCollection|Interest[]
      */
     public function getInterest(): ArrayCollection
     {
@@ -130,7 +132,7 @@ class DataRecords
     /**
      * Get the value of withdraw
      *
-     * @return  ArrayCollection
+     * @return  ArrayCollection|Withdraw[]
      */
     public function getWithdraw(): ArrayCollection
     {
@@ -155,7 +157,7 @@ class DataRecords
     /**
      * Get the value of deposit
      *
-     * @return  ArrayCollection
+     * @return  ArrayCollection|Deposit[]
      */
     public function getDeposit(): ArrayCollection
     {

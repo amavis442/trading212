@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Banpagi\Trading212;
 
-enum DataRecordEnum: string 
+enum DataRecordEnum: string
 {
     case WITHDRAW = 'withdraw';
     case DEPOSIT = 'deposit';

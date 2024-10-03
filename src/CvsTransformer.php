@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Banpagi\Trading212;
 
 use Banpagi\Trading212\Entity\DataRecords;
@@ -23,6 +25,8 @@ class CvsTransformer
 
     protected function entityFactory(string $action): mixed
     {
+        $actionEnum = null;
+
         if (stripos($action, DataRecordEnum::DEPOSIT->value) !== false) {
             $actionEnum = DataRecordEnum::DEPOSIT;
         }
@@ -49,7 +53,7 @@ class CvsTransformer
             DataRecordEnum::DIVIDEND => $this->factory->getInstance(DataRecordEnum::DIVIDEND),
             DataRecordEnum::TRANSACTION_BUY => $this->factory->getInstance(DataRecordEnum::TRANSACTION_BUY),
             DataRecordEnum::TRANSACTION_SELL => $this->factory->getInstance(DataRecordEnum::TRANSACTION_SELL),
-            default => throw new \RuntimeException('Unknown action [' . $action . '] in csv file'),
+            default => throw new \RuntimeException('Unknown action [' . $actionEnum . '] in csv file'),
         };
     }
 
@@ -128,10 +132,7 @@ class CvsTransformer
                         $entity->setOriginalPrice((float) $val);
                         break;
                     case 'currency (price / share)':
-                        if ($entity instanceof Dividend) {
-                            $entity->setDividend((float) $val);
-                        }
-                        $entity->setCurrencyOriginalPrice((float) $val);
+                        $entity->setCurrencyOriginalPrice($val);
                         break;
                     case 'exchange rate':
                         if ($entity instanceof Transaction) {
@@ -204,7 +205,7 @@ class CvsTransformer
                 $entries->addWithdraw($entity);
             }
             if ($entity instanceof Dividend) {
-                $md5Key = md5($entity->getIsin() .$entity->getTransactionDate()->format('Y-d-m H:i:s'). (string)$entity->getTotal());
+                $md5Key = md5($entity->getIsin() . $entity->getTransactionDate()->format('Y-d-m H:i:s') . (string)$entity->getTotal());
                 $entity->setMd5key($md5Key);
                 $entries->addDividend($entity);
             }
