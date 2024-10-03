@@ -13,5 +13,5 @@ package-lock.json
 phpstan.neon
 ###< phpstan/phpstan ###
 
-.prettierc.yaml
+.prettierrc.yaml
 .prettierignore

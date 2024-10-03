@@ -14,5 +14,6 @@ phpunit.xml.dist export-ignore
 rector.php export-ignore
 README.md export-ignore
 
-.prettierc.yaml export-ignore
+.prettierrc.yaml export-ignore
 .prettierignore export-ignore
+.editorconfig export-ignore

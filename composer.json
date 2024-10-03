@@ -22,6 +22,12 @@
             "Banpagi\\Trading212\\Tests\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/amavis442/trading212"
+        }
+    ],
     "authors": [
         {
             "name": "Patrick Teunissen",
