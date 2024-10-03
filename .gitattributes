@@ -1,0 +1,18 @@
+// .gitattributes
+/demo export-ignore
+phpunit.xml.dist export-ignore
+/.github/ export-ignore
+/test/ export-ignore
+/bin/ export-ignore
+
+.gitattributes export-ignore
+.gitignore export-ignore
+
+phpstan.neon.dist export-ignore
+phpstan.neon export-ignore
+phpunit.xml.dist export-ignore
+rector.php export-ignore
+README.md export-ignore
+
+.prettierc.yaml export-ignore
+.prettierignore export-ignore

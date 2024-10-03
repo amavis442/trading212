@@ -1,0 +1,9 @@
+parameters:
+    excludePaths:
+        - %currentWorkingDirectory%/migrations/*.php
+        - %currentWorkingDirectory%/src/Kernel.php
+    treatPhpDocTypesAsCertain: false
+    level: 5
+    paths:
+        - src/
+        - tests/

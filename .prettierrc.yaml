@@ -1,0 +1,12 @@
+printWidth: 80
+tabWidth: 4
+plugins:
+  - "/home/patrick/.nvm/versions/node/v20.17.0/lib/node_modules/@prettier/plugin-php/standalone.js"
+trailingComma: "es5"
+semi: true
+singleQuote: true
+requireConfig: true
+bracketSpacing: true
+bracketSameLine: false
+jsxBracketSameLine: false
+singleAttributePerLine: true

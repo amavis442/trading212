@@ -1,0 +1,17 @@
+/vendor/
+/node_modules/
+package.json
+package-lock.json
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.cache
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###
+
+.prettierc.yaml
+.prettierignore
