@@ -2,7 +2,7 @@
 /demo export-ignore
 phpunit.xml.dist export-ignore
 /.github/ export-ignore
-/test/ export-ignore
+/tests/ export-ignore
 /bin/ export-ignore
 
 .gitattributes export-ignore
