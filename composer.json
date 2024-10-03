@@ -1,5 +1,5 @@
 {
-    "name": "banpagi/trading212",
+    "name": "banpagi/trading212import",
     "description": "Import csv files from trading 212",
     "type": "library",
     "keywords": [
